@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Deltarune Chapters 1-5 Unblocked</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000000;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #focus-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+            z-index: 9999;
+            cursor: pointer;
+            text-align: center;
+            padding: 20px;
+            border: 4px dashed #ff00ff;
+        }
+        #focus-overlay h1 {
+            margin: 0 0 15px 0;
+            font-size: 28px;
+            color: #ffff00;
+            text-shadow: 2px 2px #ff0000;
+        }
+        #focus-overlay p {
+            margin: 0;
+            font-size: 16px;
+            color: #00ffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- This overlay intercepts your first click to unlock Chromebook keyboard/mouse focus -->
+    <div id="focus-overlay" onclick="startGame()">
+        <h1>❤️ CLICK HERE TO LAUNCH DELTARUNE ❤️</h1>
+        <p>[ Locks keyboard inputs & mouse controls directly to Kris ]</p>
+    </div>
+
+    <!-- The allow parameter explicitly forces Chrome to pass Arrow/Z/X keys to the frame -->
+    <iframe id="game-frame" src="https://github.io" allow="fullscreen; keyboard; autoplay"></iframe>
+
+    <script>
+        function startGame() {
+            var overlay = document.getElementById('focus-overlay');
+            var iframe = document.getElementById('game-frame');
+            
+            // Completely hide the overlay
+            overlay.style.display = 'none';
+            
+            // Force focus onto the game canvas immediately
+            iframe.focus();
+            
+            // Safety loop: re-focus the game anytime the window is clicked
+            window.addEventListener('click', function() {
+                iframe.focus();
+            });
+        }
+    </script>
+</body>
+</html>
